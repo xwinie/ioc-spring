@@ -1,6 +1,8 @@
 package com.thoughtworks.gauge.example.java;
 
 import com.thoughtworks.gauge.Step;
+import com.thoughtworks.gauge.Table;
+import com.thoughtworks.gauge.TableRow;
 import org.springframework.stereotype.Component;
 
 import static junit.framework.TestCase.assertEquals;
@@ -27,5 +29,23 @@ public class PaymentService {
         Receipt receipt = this.processor.charge(rupees);
 
         assertEquals(receipt.getPaymentStatus(), ReceiptStatus.FAILURE);
+    }
+
+    @Step("支付失败 <3000>")
+    public void failurePayment3000(String amount) {
+        int rupees = Integer.parseInt(amount);
+        Receipt receipt = this.processor.charge(rupees);
+        assertEquals(receipt.getPaymentStatus(), ReceiptStatus.FAILURE);
+    }
+
+    @Step("Create following <race> characters <table>")
+    public void implementation1(String race, Table table) {
+        for (TableRow row : table.getTableRows()) {
+            User user=new User();
+            user.setId(row.getCell("id"));
+            user.setName(row.getCell("name"));
+            System.out.println(user.toString());
+        }
+
     }
 }
