@@ -12,7 +12,7 @@ Successfull payment
 //--------------------
 * Fail to pay "2000" rupees
 * 支付失败 "3000"
-* Create following "hobbit" characters
+* 人员信息 "race" 打印
   |id |name   |
   |---|-------|
   |123|frodo  |

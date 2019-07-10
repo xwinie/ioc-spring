@@ -38,7 +38,7 @@ public class PaymentService {
         assertEquals(receipt.getPaymentStatus(), ReceiptStatus.FAILURE);
     }
 
-    @Step("Create following <race> characters <table>")
+    @Step("人员信息 <race> 打印 <table>")
     public void implementation1(String race, Table table) {
         for (TableRow row : table.getTableRows()) {
             User user=new User();
